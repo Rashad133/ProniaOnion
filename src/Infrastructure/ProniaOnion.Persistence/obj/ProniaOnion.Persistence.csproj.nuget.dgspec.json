@@ -1,0 +1,191 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Infrastructure\\ProniaOnion.Persistence\\ProniaOnion.Persistence.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Application\\ProniaOnion.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Application\\ProniaOnion.Application.csproj",
+        "projectName": "ProniaOnion.Application",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Application\\ProniaOnion.Application.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Domain\\ProniaOnion.Domain.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Domain\\ProniaOnion.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Domain\\ProniaOnion.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Domain\\ProniaOnion.Domain.csproj",
+        "projectName": "ProniaOnion.Domain",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Domain\\ProniaOnion.Domain.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Infrastructure\\ProniaOnion.Persistence\\ProniaOnion.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Infrastructure\\ProniaOnion.Persistence\\ProniaOnion.Persistence.csproj",
+        "projectName": "ProniaOnion.Persistence",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Infrastructure\\ProniaOnion.Persistence\\ProniaOnion.Persistence.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Infrastructure\\ProniaOnion.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Application\\ProniaOnion.Application.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Desktop\\ProniaOnion\\ProniaOnion\\src\\Core\\ProniaOnion.Application\\ProniaOnion.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
