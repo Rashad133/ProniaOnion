@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ProniaOnion.API.props" />
+</Project>

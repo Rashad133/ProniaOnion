@@ -1,0 +1,12 @@
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\bin\Debug\net6.0\ProniaOnion.Infrastructure.deps.json
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\bin\Debug\net6.0\ProniaOnion.Infrastructure.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\bin\Debug\net6.0\ProniaOnion.Infrastructure.pdb
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.AssemblyInfo.cs
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.sourcelink.json
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\refint\ProniaOnion.Infrastructure.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.pdb
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ref\ProniaOnion.Infrastructure.dll

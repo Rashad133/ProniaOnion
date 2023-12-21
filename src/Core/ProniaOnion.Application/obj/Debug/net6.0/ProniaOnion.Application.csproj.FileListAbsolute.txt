@@ -1,0 +1,16 @@
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\bin\Debug\net6.0\ProniaOnion.Application.deps.json
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\bin\Debug\net6.0\ProniaOnion.Application.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\bin\Debug\net6.0\ProniaOnion.Application.pdb
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\bin\Debug\net6.0\ProniaOnion.Domain.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\bin\Debug\net6.0\ProniaOnion.Domain.pdb
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.AssemblyInfo.cs
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.sourcelink.json
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.csproj.CopyComplete
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\refint\ProniaOnion.Application.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ProniaOnion.Application.pdb
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Application\obj\Debug\net6.0\ref\ProniaOnion.Application.dll
