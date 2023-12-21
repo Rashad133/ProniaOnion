@@ -8,5 +8,6 @@ namespace ProniaOnion.Application.Abstractions.Services
         //Task<GetCategoryDto> GetAsync(int id);
         Task CreateAsync(ColorCreateDto colorDto);
         Task UpdateAsync(ColorUpdateDto colorDto);
+        Task SoftDeleteAsync(int id);
     }
 }

@@ -27,6 +27,12 @@ namespace ProniaOnion.Persistence.Implementations.Repositories.Generic
             _table.Remove(entity);
         }
 
+        public void SoftDelete(T entity)
+        {
+            entity.IsDeleted = true;
+            _table.Update(entity);
+        }
+
         public IQueryable<T> GetAllAsync(
             Expression<Func<T, bool>>? expression = null,
             Expression<Func<T, object>>? orderExpression = null,
@@ -34,6 +40,7 @@ namespace ProniaOnion.Persistence.Implementations.Repositories.Generic
             int skip = 0,
             int take = 0,
             bool isTracking = false,
+            bool isDeleted = false,
             params string[] includes)
         {
             var query = _table.AsQueryable();
@@ -52,11 +59,14 @@ namespace ProniaOnion.Persistence.Implementations.Repositories.Generic
 
             if (includes is not null)
             {
-                for (var i = 0; i < includes.Length; i++)
+                for (var i = 0; i < includes.Length; i++) 
                 {
                     query = query.Include(includes[i]);
                 }
             }
+
+            if(isDeleted) query=query.IgnoreQueryFilters();
+
             return isTracking ? query : query.AsNoTracking();
         }
         public async Task<T> GetByIdAsync(int id)
@@ -69,7 +79,6 @@ namespace ProniaOnion.Persistence.Implementations.Repositories.Generic
         {
             await _db.SaveChangesAsync();
         }
-
         public async void Update(T entity)
         {
             _table.Update(entity);

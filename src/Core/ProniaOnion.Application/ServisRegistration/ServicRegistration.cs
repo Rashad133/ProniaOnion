@@ -1,11 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using ProniaOnion.Application.MappingProfiles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProniaOnion.Application.ServisRegistration
 {
@@ -14,6 +10,7 @@ namespace ProniaOnion.Application.ServisRegistration
         public static IServiceCollection AddAplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters().AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
         }
     }

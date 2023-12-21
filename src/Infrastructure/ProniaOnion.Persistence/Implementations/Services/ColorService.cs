@@ -33,9 +33,24 @@ namespace ProniaOnion.Persistence.Implementations.Services
             return colorDtos;
         }
 
-        public Task UpdateAsync(ColorUpdateDto colorDto)
+        public async Task SoftDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            Color color = await _repository.GetByIdAsync(id);
+            if (color is null) throw new Exception("Not Found");
+            _repository.SoftDelete(color);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(ColorUpdateDto colorDto)
+        {
+            Color color = await _repository.GetByIdAsync(colorDto.Id);
+            if (color is null) throw new Exception("Not Found");
+
+            color.Name = colorDto.Name;
+            _mapper.Map(colorDto, color);
+
+            _repository.Update(color);
+            await _repository.SaveChangesAsync();
         }
     }
 }

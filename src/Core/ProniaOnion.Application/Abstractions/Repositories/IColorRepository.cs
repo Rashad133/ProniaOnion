@@ -1,6 +1,5 @@
 ﻿using ProniaOnion.Application.Abstractions.Repositories.Generic;
 using ProniaOnion.Domain.Entities;
-using System.Collections.Generic;
 
 
 
