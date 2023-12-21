@@ -32,9 +32,9 @@ namespace ProniaOnion.Persistence.Implementations.Services
             await _repository.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(int id, CategoryUpdateDto categoryDto)
+        public async Task UpdateAsync(CategoryUpdateDto categoryDto)
         {
-            Category category = await _repository.GetByIdAsync(id);
+            Category category = await _repository.GetByIdAsync(categoryDto.id);
             if (category is null) throw new Exception("Not Found");
 
             category.Name = categoryDto.name;

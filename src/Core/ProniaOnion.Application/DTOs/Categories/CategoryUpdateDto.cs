@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProniaOnion.Application.DTOs.Categories
+﻿namespace ProniaOnion.Application.DTOs.Categories
 {
-    public record CategoryUpdateDto(string name);
+    public record CategoryUpdateDto(int id,string name);
     
 }

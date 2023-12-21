@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace ProniaOnion.Application.DTOs.Colors
 {
-    public record ColorUpdateDto(string name);
+    public record ColorUpdateDto(int id,string name);
 }

@@ -29,10 +29,20 @@ namespace ProniaOnion.API.Controllers
             return StatusCode(StatusCodes.Status201Created);
         }
 
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Update(int id, [FromForm] ColorUpdateDto colorDto)
+        //{
+        //    await _service.UpdateAsync(id, colorDto);
+        //    return NoContent();
+        //}
+
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromForm] ColorUpdateDto colorDto)
         {
-            await _service.UpdateAsync(id, colorDto);
+            if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
+
+            await _service.UpdateAsync( colorDto);
+
             return NoContent();
         }
     }
