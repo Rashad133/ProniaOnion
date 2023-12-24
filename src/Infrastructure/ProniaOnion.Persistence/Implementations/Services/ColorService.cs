@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProniaOnion.Application.Abstractions.Repositories;
 using ProniaOnion.Application.Abstractions.Services;
-using ProniaOnion.Application.DTOs.Categories;
 using ProniaOnion.Application.DTOs.Colors;
 using ProniaOnion.Domain.Entities;
 
@@ -25,7 +24,7 @@ namespace ProniaOnion.Persistence.Implementations.Services
 
         public async Task<ICollection<ColorItemDto>> GetAllAsync(int page, int take)
         {
-            ICollection<Color> colors = await _repository.GetAllAsync(skip: (page - 1) * take, take: take, isTracking: false).ToListAsync();
+            ICollection<Color> colors = await _repository.GetAllWhere(skip: (page - 1) * take, take: take, isTracking: false).ToListAsync();
 
             ICollection<ColorItemDto> colorDtos = _mapper.Map<ICollection<ColorItemDto>>(colors);
 
@@ -37,7 +36,7 @@ namespace ProniaOnion.Persistence.Implementations.Services
         {
             Color color = await _repository.GetByIdAsync(id);
             if (color is null) throw new Exception("Not Found");
-            _repository.SoftDelete(color);
+            _repository.ReverseSoftDelete(color);
             await _repository.SaveChangesAsync();
         }
 

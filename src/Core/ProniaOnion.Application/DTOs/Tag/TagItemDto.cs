@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace ProniaOnion.Application.DTOs.Tag
 {
-    internal record TagItemDto(int Id,string Name);
+    public record TagItemDto(int Id,string Name);
 }

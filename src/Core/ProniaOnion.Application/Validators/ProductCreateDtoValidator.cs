@@ -1,10 +1,5 @@
 ﻿using FluentValidation;
 using ProniaOnion.Application.DTOs.Products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProniaOnion.Application.Validators
 {
@@ -25,6 +20,8 @@ namespace ProniaOnion.Application.Validators
                 //.Must(x => x > 10 && x<999999.99m);--alternativ
 
             RuleFor(x => x.Description).MaximumLength(1000);
+
+            RuleFor(x => x.CategoryId).NotNull().NotEqual(0);
 
         }
     }

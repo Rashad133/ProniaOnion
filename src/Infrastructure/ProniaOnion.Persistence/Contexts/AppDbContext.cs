@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProniaOnion.Domain.Entities;
+using ProniaOnion.Persistence.Common;
 using System.Reflection;
 
 namespace ProniaOnion.Persistence.Contexts
@@ -23,8 +24,9 @@ namespace ProniaOnion.Persistence.Contexts
             //modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             //modelBuilder.ApplyConfiguration(new ColorConfiguration());
 
-            modelBuilder.Entity<Category>().HasQueryFilter(c => c.IsDeleted == false);
-            modelBuilder.Entity<Tag>().HasQueryFilter(c => c.IsDeleted == false);
+
+            modelBuilder.ApplyQueryFilters();
+
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             base.OnModelCreating(modelBuilder);

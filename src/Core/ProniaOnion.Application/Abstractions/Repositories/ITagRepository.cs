@@ -5,5 +5,6 @@ namespace ProniaOnion.Application.Abstractions.Repositories
 {
     public interface ITagRepository:IRepository<Tag>
     {
+
     }
 }
