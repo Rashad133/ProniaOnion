@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProniaOnion.Application.Abstractions.Repositories;
 using ProniaOnion.Application.Abstractions.Services;
 using ProniaOnion.Application.DTOs.Categories;
+using ProniaOnion.Application.DTOs.Products;
 using ProniaOnion.Domain.Entities;
+using ProniaOnion.Persistence.Implementations.Repositories;
 
 namespace ProniaOnion.Persistence.Implementations.Services
 {
@@ -26,15 +29,22 @@ namespace ProniaOnion.Persistence.Implementations.Services
 
             return categoryDtos;
         }
+        public async Task<CategoryGetDto> GetByIdAsync(int id)
+        {
+           Category category= await _repository.GetByIdAsync(id, includes: nameof(Category.Products));
+            CategoryGetDto dto = _mapper.Map<CategoryGetDto>(category);
+            return dto;
+        }
         public async Task CreateAsync(CategoryCreateDto categoryDto)
         {
             await _repository.AddAsync(_mapper.Map<Category>(categoryDto));
             await _repository.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(CategoryUpdateDto categoryDto)
+
+        public async Task UpdateAsync(int id, CategoryUpdateDto categoryDto)
         {
-            Category category = await _repository.GetByIdAsync(categoryDto.id);
+            Category category = await _repository.GetByIdAsync(id);
             if (category is null) throw new Exception("Not Found");
 
             category.Name = categoryDto.name;
@@ -44,13 +54,33 @@ namespace ProniaOnion.Persistence.Implementations.Services
             await _repository.SaveChangesAsync();
         }
 
+
+        public async Task DeleteAsync(int id)
+        {
+            Category category = await _repository.GetByIdAsync(id);
+
+            if (category is null) throw new Exception("Not Found");
+
+            _repository.Delete(category);
+            await _repository.SaveChangesAsync();
+        }
         public async Task SoftDeleteAsync(int id)
         {
             Category category = await _repository.GetByIdAsync(id);
             if (category is null) throw new Exception("Not Found");
-            _repository.ReverseSoftDelete(category);
+            _repository.SoftDelete(category);
             await _repository.SaveChangesAsync();
         }
+
+        public async Task ReverseSoftDelete(int id)
+        {
+            
+        }
+
+
+
+
+
 
 
 
@@ -66,14 +96,6 @@ namespace ProniaOnion.Persistence.Implementations.Services
         //    };
         //}
 
-        //public async Task DeleteAsync(int id)
-        //{
-        //    Category category = await _repository.GetByIdAsync(id);
 
-        //    if (category is null) throw new Exception("Not Found");
-
-        //    _repository.Delete(category);
-        //    await _repository.SaveChangesAsync();
-        //}
     }
 }

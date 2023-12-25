@@ -26,6 +26,7 @@ namespace ProniaOnion.Application.Abstractions.Repositories.Generic
         Task AddAsync(T entity);
         void Update(T entity);
         void Delete(T entity);
+        void SoftDelete(T entity);
         void ReverseSoftDelete(T entity);
         Task SaveChangesAsync();
     }

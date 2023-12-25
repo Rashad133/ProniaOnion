@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ProniaOnion.Application.Abstractions.Repositories;
 using ProniaOnion.Application.Abstractions.Services;
-using ProniaOnion.Application.DTOs.Categories;
+using ProniaOnion.Application.DTOs.Products;
 using ProniaOnion.Application.DTOs.Tag;
 using ProniaOnion.Domain.Entities;
 
@@ -18,11 +17,7 @@ namespace ProniaOnion.Persistence.Implementations.Services
             _repository = repository;
             _mapper = mapper;
         }
-        public async Task CreateAsync(TagCreateDto tagDto)
-        {
-            await _repository.AddAsync(_mapper.Map<Tag>(tagDto));
-            await _repository.SaveChangesAsync();
-        }
+        
 
         public async Task<ICollection<TagItemDto>> GetAllAsync(int page, int take)
         {
@@ -34,14 +29,19 @@ namespace ProniaOnion.Persistence.Implementations.Services
             return tagDtos;
         }
 
-        public async Task SoftDeleteAsync(int id)
+
+        public async Task<TagGetDto> GetByIdAsync(int id)
         {
-            Tag tag = await _repository.GetByIdAsync(id);
-            if (tag is null) throw new Exception("Not Found");
-            _repository.ReverseSoftDelete(tag);
-            await _repository.SaveChangesAsync();
+            Tag tag = await _repository.GetByIdAsync(id, includes: nameof(Tag.ProductTags));
+            ProductGetDto dto = _mapper.Map<ProductGetDto>(tag);
         }
 
+
+        public async Task CreateAsync(TagCreateDto tagDto)
+        {
+            await _repository.AddAsync(_mapper.Map<Tag>(tagDto));
+            await _repository.SaveChangesAsync();
+        }
         public async Task UpdateAsync(TagUpdateDto tagDto)
         {
             Tag tag = await _repository.GetByIdAsync(tagDto.Id);
@@ -51,6 +51,27 @@ namespace ProniaOnion.Persistence.Implementations.Services
             _mapper.Map(tagDto, tag);
 
             _repository.Update(tag);
+            await _repository.SaveChangesAsync();
+        }
+        public async Task DeleteAsync(int id)
+        {
+            Tag tag = await _repository.GetByIdAsync(id);
+            if (tag is null) throw new Exception("Not Found");
+            _repository.Delete(tag);
+            await _repository.SaveChangesAsync();
+        }
+        public async Task SoftDeleteAsync(int id)
+        {
+            Tag tag = await _repository.GetByIdAsync(id);
+            if (tag is null) throw new Exception("Not Found");
+            _repository.SoftDelete(tag);
+            await _repository.SaveChangesAsync();
+        }
+        public async Task ReverseSoftDeleteAsync(int id)
+        {
+            Tag tag = await _repository.GetByIdAsync(id);
+            if (tag is null) throw new Exception("Not Found");
+            _repository.ReverseSoftDelete(tag);
             await _repository.SaveChangesAsync();
         }
 

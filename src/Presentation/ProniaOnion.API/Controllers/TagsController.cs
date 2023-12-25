@@ -15,11 +15,15 @@ namespace ProniaOnion.API.Controllers
             _service = service;
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Get(int page = 1, int take = 3)
         {
             return Ok(await _service.GetAllAsync(page, take));
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await _service.GetByIdAsync(id));
         }
 
         [HttpPost]
@@ -36,13 +40,25 @@ namespace ProniaOnion.API.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
+            await _service.DeleteAsync(id);
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+        [HttpDelete("SoftDelete/{id}")]
+        public async Task<IActionResult> SoftDeleteAsync(int id)
         {
             if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
             await _service.SoftDeleteAsync(id);
             return StatusCode(StatusCodes.Status204NoContent);
         }
-
+        [HttpDelete("ReverseSoftDelete/{id}")]
+        public async Task<IActionResult> ReverseSoftDeleteAsync(int id)
+        {
+            if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
+            await _service.ReverseSoftDeleteAsync(id);
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
     }
 }

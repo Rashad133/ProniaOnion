@@ -29,13 +29,6 @@ namespace ProniaOnion.API.Controllers
             return StatusCode(StatusCodes.Status201Created);
         }
 
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> Update(int id, [FromForm] ColorUpdateDto colorDto)
-        //{
-        //    await _service.UpdateAsync(id, colorDto);
-        //    return NoContent();
-        //}
-
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromForm] ColorUpdateDto colorDto)
         {
@@ -46,11 +39,12 @@ namespace ProniaOnion.API.Controllers
             return NoContent();
         }
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
             if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
             await _service.SoftDeleteAsync(id);
             return StatusCode(StatusCodes.Status204NoContent);
         }
+        
     }
 }

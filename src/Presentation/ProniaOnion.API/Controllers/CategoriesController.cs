@@ -20,33 +20,48 @@ namespace ProniaOnion.API.Controllers
         {
             return Ok(await _service.GetAllAsync(page, take));
         }
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> Get(int id)
-        //{
-        //    if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
-        //    return StatusCode(StatusCodes.Status200OK, await _service.GetAsync(id));
-        //}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await _service.GetByIdAsync(id));
+        }
 
+        
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] CategoryCreateDto categoryDto)
+        public async Task<IActionResult> Post([FromForm] CategoryCreateDto categoryDto)
         {
             await _service.CreateAsync(categoryDto);
             return StatusCode(StatusCodes.Status201Created);
         }
 
-        [HttpPut()]
-        public async Task<IActionResult> Update([FromForm] CategoryUpdateDto categoryDto)
+        
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromForm] CategoryUpdateDto dto)
         {
-            if (categoryDto.id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
-            await _service.UpdateAsync(categoryDto);
-            return NoContent();
+            if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
+            await _service.UpdateAsync(id, dto);
+            return StatusCode(StatusCodes.Status204NoContent);
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
+            await _service.DeleteAsync(id);
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+        [HttpDelete("SoftDelete/{id}")]
+        public async Task<IActionResult> SoftDeleteAsync(int id)
         {
             if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
             await _service.SoftDeleteAsync(id);
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+        [HttpDelete("ReverseSoftDelete/{id}")]
+        public async Task<IActionResult> ReverseSoftDeleteAsync(int id)
+        {
+            if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
+            await _service.ReverseSoftDelete(id);
             return StatusCode(StatusCodes.Status204NoContent);
         }
     }

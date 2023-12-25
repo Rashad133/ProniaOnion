@@ -3,7 +3,7 @@ using ProniaOnion.Application.DTOs.Products;
 
 namespace ProniaOnion.Application.Validators
 {
-    internal class ProductCreateDtoValidator:AbstractValidator<ProductCreateDto>
+    public class ProductCreateDtoValidator:AbstractValidator<ProductCreateDto>
     {
         public ProductCreateDtoValidator()
         {
@@ -23,6 +23,8 @@ namespace ProniaOnion.Application.Validators
 
             RuleFor(x => x.CategoryId).NotNull().NotEqual(0);
 
+            RuleForEach(x=>x.ColorIds).Must(c=>c>0);
+            RuleFor(x=>x.ColorIds).NotEmpty();
         }
     }
 }
