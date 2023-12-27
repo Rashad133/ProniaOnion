@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProniaOnion.Application.MappingProfiles
 {
-    public class CategoryProfile:Profile
+    internal class CategoryProfile:Profile
     {
         public CategoryProfile()
         {
@@ -17,6 +17,7 @@ namespace ProniaOnion.Application.MappingProfiles
             CreateMap<CategoryCreateDto, Category>();
             CreateMap<CategoryUpdateDto, Category>().ReverseMap();
             CreateMap<Category,IncludeCategoryDto>().ReverseMap();
+            CreateMap<Category,CategoryGetDto>();
         }
     }
 }

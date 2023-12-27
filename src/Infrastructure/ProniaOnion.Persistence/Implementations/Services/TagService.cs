@@ -33,7 +33,8 @@ namespace ProniaOnion.Persistence.Implementations.Services
         public async Task<TagGetDto> GetByIdAsync(int id)
         {
             Tag tag = await _repository.GetByIdAsync(id, includes: nameof(Tag.ProductTags));
-            ProductGetDto dto = _mapper.Map<ProductGetDto>(tag);
+            TagGetDto dto = _mapper.Map<TagGetDto>(tag);
+            return dto;
         }
 
 

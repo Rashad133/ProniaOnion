@@ -10,3 +10,4 @@ C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Domain\obj\De
 C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Domain\obj\Debug\net6.0\refint\ProniaOnion.Domain.dll
 C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Domain\obj\Debug\net6.0\ProniaOnion.Domain.pdb
 C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Domain\obj\Debug\net6.0\ref\ProniaOnion.Domain.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Core\ProniaOnion.Domain\obj\Debug\net6.0\ProniaOnion.Domain.csproj.AssemblyReference.cache

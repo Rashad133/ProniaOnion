@@ -1,20 +1,17 @@
 ﻿using AutoMapper;
 using ProniaOnion.Application.DTOs.Tag;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ProniaOnion.Domain.Entities;
 
 namespace ProniaOnion.Application.MappingProfiles
 {
-    public class TagProfile:Profile
+    internal class TagProfile:Profile
     {
         public TagProfile()
         {
             CreateMap<TagProfile, TagItemDto>().ReverseMap();
-            CreateMap<TagCreateDto,TagProfile>();
-            CreateMap<TagUpdateDto, TagProfile>().ReverseMap();
+            CreateMap<TagCreateDto,Tag>().ReverseMap();
+            CreateMap<TagUpdateDto, Tag>().ReverseMap();
+            CreateMap<Tag,TagGetDto>().ReverseMap();
         }
     }
 }

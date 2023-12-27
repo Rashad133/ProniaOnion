@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProniaOnion.Application.MappingProfiles
 {
-    public class ColorProfile:Profile
+    internal class ColorProfile:Profile
     {
         public ColorProfile()
         {

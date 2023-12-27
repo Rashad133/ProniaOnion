@@ -4,7 +4,7 @@ using ProniaOnion.Domain.Entities;
 
 namespace ProniaOnion.Application.MappingProfiles
 {
-    public class ProductProfile:Profile
+    internal class ProductProfile:Profile
     {
         public ProductProfile()
         {
@@ -12,6 +12,7 @@ namespace ProniaOnion.Application.MappingProfiles
             CreateMap<Product,ProductGetDto>().ReverseMap();
             CreateMap<ProductCreateDto,Product>();
             CreateMap<Product, ProductUpdateDto>().ReverseMap();
+            CreateMap<Product,ProductGetDto>();
         }
     }
 }

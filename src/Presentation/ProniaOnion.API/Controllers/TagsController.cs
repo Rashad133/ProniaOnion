@@ -39,7 +39,7 @@ namespace ProniaOnion.API.Controllers
             await _service.UpdateAsync(tagDto);
             return NoContent();
         }
-
+        [HttpDelete]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);

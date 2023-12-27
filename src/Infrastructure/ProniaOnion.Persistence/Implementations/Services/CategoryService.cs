@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProniaOnion.Application.Abstractions.Repositories;
 using ProniaOnion.Application.Abstractions.Services;
 using ProniaOnion.Application.DTOs.Categories;
-using ProniaOnion.Application.DTOs.Products;
 using ProniaOnion.Domain.Entities;
-using ProniaOnion.Persistence.Implementations.Repositories;
 
 namespace ProniaOnion.Persistence.Implementations.Services
 {
