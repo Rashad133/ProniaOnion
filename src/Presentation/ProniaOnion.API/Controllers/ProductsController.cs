@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProniaOnion.Application.Abstractions.Services;
 using ProniaOnion.Application.DTOs.Products;
@@ -7,6 +8,7 @@ namespace ProniaOnion.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _service;

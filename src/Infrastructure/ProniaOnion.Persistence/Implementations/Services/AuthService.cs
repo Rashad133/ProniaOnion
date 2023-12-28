@@ -1,13 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 using ProniaOnion.Application.Abstractions.Repositories;
+using ProniaOnion.Application.Abstractions.Services;
+using ProniaOnion.Application.DTOs.Tokens;
 using ProniaOnion.Application.DTOs.Users;
 using ProniaOnion.Domain.Entities;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 
 namespace ProniaOnion.Persistence.Implementations.Services
@@ -16,13 +14,13 @@ namespace ProniaOnion.Persistence.Implementations.Services
     {
         private readonly IMapper _mapper;
         private readonly UserManager<AppUser> _userManager;
-        private readonly IConfiguration _config;
+        private readonly ITokenHandler _handler;
 
-        public AuthService(IMapper mapper,IConfiguration config,UserManager<AppUser> userManager)
+        public AuthService(IMapper mapper,ITokenHandler handler,UserManager<AppUser> userManager)
         {
             _userManager = userManager;
             _mapper = mapper;
-            _config = config;
+            _handler = handler;
         }
 
         public async Task<TokenResponseDto> Login(LoginDto dto)
@@ -35,32 +33,11 @@ namespace ProniaOnion.Persistence.Implementations.Services
             }
             if (!await _userManager.CheckPasswordAsync(user, dto.Password)) throw new Exception("Username,Email or Password incorrect");
 
-            List<Claim> claims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Name,user.UserName),
-                new Claim(ClaimTypes.Email,user.Email),
-                new Claim(ClaimTypes.NameIdentifier,user.Id)
-            };
+            return _handler.CreateJwt(user,2);
 
-            SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes
-                (_config["Jwt:SecurityKey"]));
-
-            SigningCredentials signingCredentials = new(symmetricSecurityKey, SecurityAlgorithms.HmacSha512Signature);
-
-            JwtSecurityToken jwtSecurityToken = new JwtSecurityToken(
-               issuer: _config["Jwt:issuer"],
-               audience: _config["Jwt:audience"],
-               claims: claims,
-               notBefore: DateTime.UtcNow,
-               expires: DateTime.UtcNow.AddHours(2)
-                ) ;
-
-            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler() ;
-            string token = tokenHandler.WriteToken(jwtSecurityToken) ;
-
-            return new(token, jwtSecurityToken.ValidTo, user.UserName);
+            
+            
         }
-
         public async Task Register(RegisterDto dto)
         {
 

@@ -44,7 +44,6 @@ namespace ProniaOnion.Persistence.ServiceRegistration
 
 
             services.AddScoped<IAuthService,AuthService>();
-            services.AddScoped<IAuthService,AuthService>();
 
             return services;
         }

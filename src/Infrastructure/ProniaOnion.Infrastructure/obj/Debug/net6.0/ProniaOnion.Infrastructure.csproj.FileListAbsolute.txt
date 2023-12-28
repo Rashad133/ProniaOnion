@@ -10,3 +10,9 @@ C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Inf
 C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\refint\ProniaOnion.Infrastructure.dll
 C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.pdb
 C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ref\ProniaOnion.Infrastructure.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\bin\Debug\net6.0\ProniaOnion.Application.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\bin\Debug\net6.0\ProniaOnion.Domain.dll
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\bin\Debug\net6.0\ProniaOnion.Application.pdb
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\bin\Debug\net6.0\ProniaOnion.Domain.pdb
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\ProniaOnion\ProniaOnion\src\Infrastructure\ProniaOnion.Infrastructure\obj\Debug\net6.0\ProniaOnion.Infrastructure.csproj.CopyComplete

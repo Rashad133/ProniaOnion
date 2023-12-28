@@ -1,4 +1,5 @@
-﻿using ProniaOnion.Application.DTOs.Users;
+﻿using ProniaOnion.Application.DTOs.Tokens;
+using ProniaOnion.Application.DTOs.Users;
 
 namespace ProniaOnion.Application.Abstractions.Repositories
 {
