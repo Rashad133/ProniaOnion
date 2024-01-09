@@ -45,6 +45,8 @@ namespace ProniaOnion.Persistence.ServiceRegistration
 
             services.AddScoped<IAuthService,AuthService>();
 
+            services.AddScoped<AppDbContextInitializer>();
+
             return services;
         }
     }

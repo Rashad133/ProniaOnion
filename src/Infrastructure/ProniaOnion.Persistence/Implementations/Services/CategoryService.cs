@@ -71,14 +71,11 @@ namespace ProniaOnion.Persistence.Implementations.Services
 
         public async Task ReverseSoftDelete(int id)
         {
-            
+            Category category = await _repository.GetByIdAsync(id);
+            if (category is null) throw new Exception("Not Found");
+            _repository.ReverseSoftDelete(category);
+            await _repository.SaveChangesAsync();
         }
-
-
-
-
-
-
 
 
         //public async Task<GetCategoryDto> GetAsync(int id)

@@ -23,6 +23,7 @@ namespace ProniaOnion.API.Controllers
             return Ok(await _service.GetAllPaginated(page, take));
         }
         [HttpGet("{id}")]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _service.GetByIdAsync(id));

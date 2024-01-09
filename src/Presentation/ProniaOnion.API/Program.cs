@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Models;
 using ProniaOnion.Application.ServisRegistration;
 using ProniaOnion.Infrastructure.ServiceRegistration;
+using ProniaOnion.Persistence.Contexts;
 using ProniaOnion.Persistence.ServiceRegistration;
 
 namespace ProniaOnion.API
@@ -21,7 +22,7 @@ namespace ProniaOnion.API
             //builder.Services.AddSwaggerGen();
             builder.Services.AddSwaggerGen(opt =>
             {
-                opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
+                opt.SwaggerDoc("v1", new OpenApiInfo { Title = "ProniaAPI", Version = "v1" });
                 opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
@@ -57,6 +58,16 @@ namespace ProniaOnion.API
                 app.UseSwaggerUI();
             }
 
+
+            using(var scope = app.Services.CreateScope())
+            {
+                var initializer = scope.ServiceProvider.GetRequiredService<AppDbContextInitializer>();
+                initializer.InitializeDbContext().Wait();
+                initializer.CreateRoleAsync().Wait();
+                initializer.InitializeAdmin();
+            }
+
+            
             app.UseHttpsRedirection();
 
             app.UseAuthentication();
